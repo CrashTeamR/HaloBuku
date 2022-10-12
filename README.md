@@ -52,24 +52,15 @@ Marketplace sell various novels
   - TypeScript
 - Node.js & npm
 - React
-  - Vite v3
-    - React Router v6
   - Next.js v12
     - next/router
     - next/image
-  - Remix v1.7.2
-    - Remix Router
 - Data Fetching
   - REST API: `axios` / `swr`
   - GraphQL: `urql` / `graphql-request`
-- UI Components
-  - Ariakit
-  - Headless UI
-  - Radix UI
 - Misc
   - Prettier
   - ESLint
-  - `concurrently`
 
 ## Development
 
@@ -149,60 +140,5 @@ type User {
 }
 ```
 
-## REST API Documentation
-
 Base URL: `https://api.example.com`
 
-### Resources
-
-| Endpoint         | Method   | Description               |
-| ---------------- | -------- | ------------------------- |
-| `/resources`     | `GET`    | Get all resources         |
-| `/resources/:id` | `GET`    | Get one resource by id    |
-| `/resources`     | `POST`   | Create new resource       |
-| `/resources/:id` | `PUT`    | Update one resource by id |
-| `/resources/:id` | `PATCH`  | Patch one resource by id  |
-| `/resources`     | `DELETE` | Remove all resources      |
-| `/resources/:id` | `DELETE` | Remove one resource by id |
-
-### Auth
-
-| Endpoint        | Method | Description                    |
-| --------------- | ------ | ------------------------------ |
-| `/auth/signup`  | `POST` | Sign up new account            |
-| `/auth/signin`  | `POST` | Sign in to existing account    |
-| `/auth/signout` | `POST` | Sign out authenticated account |
-
-## GraphQL API Documentation
-
-Base URL: `https://api.example.com/graphql`
-
-```graphql
-query getAllResources {
-  resources {
-    id
-    title
-  }
-}
-```
-
-```graphql
-query getOneResourceById {
-  resource(id: "abc123") {
-    id
-    title
-  }
-}
-```
-
-```graphql
-mutation createNewResource {
-  createResource(
-    title: "New resource name"
-    description: "More details about\nthe new resource."
-  ) {
-    id
-    title
-  }
-}
-```
