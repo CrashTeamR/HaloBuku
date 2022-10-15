@@ -119,10 +119,27 @@ Details on deployment using Vercel or Netlify here.
   "publishedYear": 2022,
   "author": "Tere Liye",
   "description": "Novel from Indonesia",
+  "coverImageUrl": "",
+  "thumbnailImageUrl": "",
   "price": 200000,
   "isAvailable": true,
   "quantity": 100
 }
+```
+
+```ts
+type Book = {
+  id: string;
+  title: string;
+  author: string;
+  coverImageUrl: string;
+  thumbnailImageUrl?: string;
+  description: string;
+  isAvailable: boolean;
+  price: number;
+  quantity: number;
+  publishedYear?: number;
+};
 ```
 
 ```graphql
