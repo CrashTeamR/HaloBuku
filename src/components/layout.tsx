@@ -7,10 +7,10 @@ type Props = {
 
 export const RootLayout = ({ children }: Props) => {
   return (
-    <>
+    <div className="flex flex-col">
       <Header />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
