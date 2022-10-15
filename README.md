@@ -8,8 +8,6 @@ Marketplace sell various novels
 
 ## Links
 
-- https://halobuku.com
-
 ### Production
 
 - https://halobuku.vercel.app
