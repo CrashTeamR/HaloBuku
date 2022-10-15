@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <RootLayout>
-        <h1>Oke Oke</h1>
+        <main className="">Typescript gokil!</main>
       </RootLayout>
     </>
   );
