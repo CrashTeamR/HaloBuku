@@ -1,3 +1,5 @@
+import { RootLayout } from "../components";
+
 import Head from "next/head";
 
 export default function Home() {
@@ -7,7 +9,9 @@ export default function Home() {
         <title>Home | Halo Buku</title>
       </Head>
 
-      <h1>Welcome to Halo Buku.</h1>
+      <RootLayout>
+        <h1>Oke Oke</h1>
+      </RootLayout>
     </>
   );
 }
