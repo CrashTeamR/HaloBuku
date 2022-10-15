@@ -1,6 +1,6 @@
-# Halo Buku
+# HaloBuku
 
-Marketplace sell various novels
+Commerce to buy various books such as novels
 
 ![Screenshot 1]()
 
@@ -14,8 +14,7 @@ Marketplace sell various novels
 
 ### Local
 
-- http://localhost:3000
-- http://localhost:5173
+- http://localhost:3000 for Next.js
 
 ### Design
 
@@ -90,6 +89,25 @@ npm start
 
 Details on deployment using Vercel or Netlify here.
 
+## REST API Endpoints
+
+- Local REST API URL:
+  - `http://localhost:8000`
+- Production REST API URL:
+  - `https://halobuku.railway.app`
+  - `https://halobuku.ericprd.site`
+
+| HTTP   | Endpoint              | Description      |
+| ------ | --------------------- | ---------------- |
+| GET    | `/books?$lookup=*`    | Get all books    |
+| POST   | `/books/`             | Create book      |
+| PATCH  | `/books/:id`          | Patch book       |
+| DELETE | `/books/:id`          | Delete book      |
+| GET    | `/products?$lookup=*` | Get all products |
+| POST   | `/products/`          | Create product   |
+| PATCH  | `/products/:id`       | Patch product    |
+| DELETE | `/products/:id`       | Delete product   |
+
 ## Data Model
 
 ### Books
@@ -101,10 +119,27 @@ Details on deployment using Vercel or Netlify here.
   "publishedYear": 2022,
   "author": "Tere Liye",
   "description": "Novel from Indonesia",
+  "coverImageUrl": "",
+  "thumbnailImageUrl": "",
   "price": 200000,
   "isAvailable": true,
   "quantity": 100
 }
+```
+
+```ts
+type Book = {
+  id: string;
+  title: string;
+  author: string;
+  coverImageUrl: string;
+  thumbnailImageUrl?: string;
+  description: string;
+  isAvailable: boolean;
+  price: number;
+  quantity: number;
+  publishedYear?: number;
+};
 ```
 
 ```graphql
@@ -120,7 +155,7 @@ type Resource {
 }
 ```
 
-### User
+## User
 
 ```json
 {
