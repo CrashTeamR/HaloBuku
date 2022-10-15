@@ -1,5 +1,5 @@
-import logo from "./logo.png";
+import blueLogo from "./blue-logo.png";
 import searchIcon from "./search-icon.svg";
 import shoppingBag from "./shopping-bag.svg";
 
-export { logo, shoppingBag, searchIcon };
+export { blueLogo, shoppingBag, searchIcon };

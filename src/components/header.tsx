@@ -1,4 +1,4 @@
-import { logo, shoppingBag } from "../../public/images";
+import { blueLogo, shoppingBag } from "../../public/images";
 import Image from "next/image";
 
 export const Header = () => {
@@ -6,7 +6,7 @@ export const Header = () => {
     <header className=" shadow-sm p-4">
       <div className="container m-auto flex justify-between items-cente">
         <Image
-          src={logo}
+          src={blueLogo}
           alt={"Brand Logo"}
           width={74}
           height={64}
