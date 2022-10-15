@@ -21,8 +21,8 @@ Marketplace sell various novels
 
 ### Design
 
-- Figma Mockup        : [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
-- Figma Prototype     :
+- Figma Mockup : [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
+- Figma Prototype :
 - Whimsical Flowchart : [Whimsical Link](https://whimsical.com/flowchart-AEp4LaBGjDUQFUG5N3GVkU@2Ux7TurymLpWJ3evPGyq)
 
 ## Main Features
@@ -141,4 +141,3 @@ type User {
 ```
 
 Base URL: `https://api.example.com`
-
