@@ -1,8 +1,15 @@
-import { Card, Layout, RandomBooks } from "../components";
 import Head from "next/head";
-import React from "react";
 
-export default function Home({ data }) {
+import { Card, Layout } from "../components";
+import type { Books } from "../types";
+
+interface HomeProps {
+  data: {
+    books: Books;
+  };
+}
+
+export default function Home({ data }: HomeProps) {
   return (
     <>
       <Head>
@@ -16,12 +23,8 @@ export default function Home({ data }) {
           </h1>
         </div>
         <div className="flex max-w-screen-xl justify-center md:justify-start mx-auto items-center px-5 gap-3 flex-wrap">
-          {data.books?.map((book) => {
-            return (
-              <React.Fragment key={book._id}>
-                <Card data={book} />
-              </React.Fragment>
-            );
+          {data?.books?.map((book) => {
+            return <Card key={book._id} data={book} />;
           })}
         </div>
       </Layout>
@@ -30,7 +33,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`);
+  const res = await fetch(`${process.env.API_URL}/books`);
   const data = await res.json();
   return {
     props: {
