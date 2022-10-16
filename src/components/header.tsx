@@ -7,13 +7,15 @@ export const Header = () => {
     <header className="shadow-sm p-4 fixed top-0 min-w-full z-10 bg-gray-200">
       <div className="container m-auto flex justify-between items-center">
         <Link href="/">
-          <Image
-            src={blueLogo}
-            alt="Brand Logo"
-            width={74}
-            height={64}
-            className="cursor-pointer"
-          />
+          <a>
+            <Image
+              src={blueLogo}
+              alt="Brand Logo"
+              width={74}
+              height={64}
+              className="cursor-pointer"
+            />
+          </a>
         </Link>
         <form className="bg-gray-100 py-2 px-5 rounded-lg flex justify-between items-center gap-2 w-1/3 outline outline-1 outline-blue-200">
           <label

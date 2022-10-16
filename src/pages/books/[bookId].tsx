@@ -6,6 +6,7 @@ export default function DetailBook() {
   return (
     <Layout>
       <section className="flex flex-col items-center lg:flex-row lg:justify-center">
+        {/* <img src="/images/happy-book.png" alt="Happy Book" /> */}
         <Image src={happyBook} alt="Example Picture" className="shadow-xl" />
         <div className="flex flex-col justify-center gap-8 lg:w-1/2 p-4 md:px-12 lg:p-2">
           <div>
