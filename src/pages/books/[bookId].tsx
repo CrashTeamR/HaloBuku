@@ -50,7 +50,6 @@ export default function DetailBook() {
             <div>
               <h4 className="text-base text-gray-700 my-1">Harga</h4>
               <h3 className="text-xl font-semibold">
-                Rp{" "}
                 {data?.book?.price.toLocaleString("id-ID", {
                   style: "currency",
                   currency: "IDR",
