@@ -1,7 +1,21 @@
 import { Card, RootLayout, RandomBooks } from "../components";
 import Head from "next/head";
+import React from "react";
 
-export default function Home() {
+interface Book {
+  _id: string;
+  title: string;
+  author: string;
+  image: string;
+  description: string;
+  isAvailable: boolean;
+  price: number;
+  quantity: number;
+  publishedYear?: number;
+}
+
+export default function Home({ books }) {
+  console.log(books);
   return (
     <>
       <Head>
@@ -15,13 +29,32 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex justify-center md:justify-between items-center gap-3 flex-wrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {books?.map((book) => {
+            return (
+              <React.Fragment key={book._id}>
+                <Card data={book} />
+              </React.Fragment>
+            );
+          })}
         </div>
-        <RandomBooks />
       </RootLayout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get books.
+  // You can use any data fetching library
+  const res = await fetch(
+    "https://halobuku.ericprd.site/api/v1/books?$lookup=*"
+  );
+  const books = await res.json();
+
+  // By returning { props: { books } }, the Blog component
+  // will receive `books` as a prop at build time
+  return {
+    props: {
+      books,
+    },
+  };
 }
