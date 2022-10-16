@@ -27,7 +27,7 @@ export default function Home({ data }) {
             Buku Rilisan Terbaru
           </h1>
         </div>
-        <div className="flex justify-center md:justify-between items-center gap-3 flex-wrap">
+        <div className="flex max-w-screen-xl justify-center md:justify-start mx-auto items-center gap-3 flex-wrap">
           {data.books?.map((book) => {
             return (
               <React.Fragment key={book._id}>
