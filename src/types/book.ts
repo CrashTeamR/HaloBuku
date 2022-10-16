@@ -2,7 +2,8 @@ export type Book = {
   _id: string;
   title: string;
   author: string;
-  coverImageUrl: string;
+  image: string;
+  coverImageUrl?: string;
   thumbnailImageUrl?: string;
   description: string;
   isAvailable: boolean;
