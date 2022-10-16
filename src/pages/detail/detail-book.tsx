@@ -1,10 +1,10 @@
 import { happyBook } from "../../../public/images";
-import { RootLayout } from "../../components";
+import { Layout } from "../../components";
 import Image from "next/image";
 
 export default function DetailBook() {
   return (
-    <RootLayout>
+    <Layout>
       <section className="flex flex-col items-center lg:flex-row lg:justify-center">
         <Image src={happyBook} alt="Example Picture" className="shadow-xl" />
         <div className="flex flex-col justify-center gap-8 lg:w-1/2 p-4 md:px-12 lg:p-2">
@@ -42,6 +42,6 @@ export default function DetailBook() {
           </div>
         </div>
       </section>
-    </RootLayout>
+    </Layout>
   );
 }
