@@ -3,7 +3,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function useGetBookData(bookId) {
   const { data, error } = useSWR(
