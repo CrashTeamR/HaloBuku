@@ -1,4 +1,3 @@
-import { happyBook } from "../../../public/images";
 import { Layout } from "../../components";
 import Image from "next/image";
 import useSWR from "swr";
@@ -6,7 +5,7 @@ import { useRouter } from "next/router";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-function getBookData(bookId) {
+function useGetBookData(bookId) {
   const { data, error } = useSWR(
     `${process.env.NEXT_PUBLIC_API_URL}/books/${bookId}`,
     fetcher
@@ -21,7 +20,7 @@ function getBookData(bookId) {
 export default function DetailBook() {
   const router = useRouter();
   const { bookId } = router.query;
-  const { data, isLoading, isError } = getBookData(bookId);
+  const { data, isLoading, isError } = useGetBookData(bookId);
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Failed to load</div>;
