@@ -12,15 +12,16 @@ export const Header = () => {
           height={64}
           className="cursor-pointer"
         />
-        <form className="">
+        <form className="bg-gray-100 py-2 px-5 rounded-lg flex justify-between items-center gap-2 w-1/3 outline outline-1 outline-blue-200">
           <input
-            type="search"
-            name="search"
-            id="search"
-            className="appearance-none focus:outline-none p-2"
+            type="text"
+            name="search-keyword"
+            id="search-keyword"
+            placeholder="Search title, author, or keyword ..."
+            className="appearance-none focus:outline-none p-2 placeholder:text-xs w-full placeholder:text-blue-600/40 bg-transparent text-gray-800"
           />
-          <label htmlFor="search">
-            <Image src={searchIcon} alt="Search Icon" />
+          <label htmlFor="search-keyword">
+            <Image src={searchIcon} alt="Search Icon" width={24} height={24} />
           </label>
         </form>
         <Image
