@@ -10,7 +10,11 @@ Commerce to buy various books such as novels
 
 ### Production
 
-- https://halobuku.vercel.app
+- https://halobuku.netlify.app/
+- https://halobuku.ericprd.site/
+- https://halobuku.ersankarimi.com/
+- https://halobuku.bayusatriow.me/
+- https://halobuku.dennysh.com/
 
 ### Local
 
