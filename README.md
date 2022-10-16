@@ -128,9 +128,9 @@ Details on deployment using Vercel or Netlify here.
 
 ```json
 {
-  "id": "abc123",
   "name": "First Last",
-  "email": "firstlast@user.com"
+  "email": "firstlast@user.com",
+  "password": "password123
 }
 ```
 
