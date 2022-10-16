@@ -2,18 +2,6 @@ import { Card, Layout, RandomBooks } from "../components";
 import Head from "next/head";
 import React from "react";
 
-interface Book {
-  _id: string;
-  title: string;
-  author: string;
-  image: string;
-  description: string;
-  isAvailable: boolean;
-  price: number;
-  quantity: number;
-  publishedYear?: number;
-}
-
 export default function Home({ data }) {
   return (
     <>
@@ -27,7 +15,7 @@ export default function Home({ data }) {
             Buku Rilisan Terbaru
           </h1>
         </div>
-        <div className="flex max-w-screen-xl justify-center md:justify-start mx-auto items-center gap-3 flex-wrap">
+        <div className="flex max-w-screen-xl justify-center md:justify-start mx-auto items-center px-5 gap-3 flex-wrap">
           {data.books?.map((book) => {
             return (
               <React.Fragment key={book._id}>
@@ -42,13 +30,8 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get books.
-  // You can use any data fetching library
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`);
   const data = await res.json();
-
-  // By returning { props: { books } }, the Blog component
-  // will receive `books` as a prop at build time
   return {
     props: {
       data,
