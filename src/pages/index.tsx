@@ -15,8 +15,6 @@ interface Book {
 }
 
 export default function Home({ data }) {
-  // const;
-
   return (
     <>
       <Head>
