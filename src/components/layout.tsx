@@ -6,7 +6,9 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex flex-col">
       <Header />
-      <main className="container mx-auto px-2 mt-5 mb-20">{children}</main>
+      <main className="container mx-auto p-[4rem_2rem] mt-5 mb-20">
+        {children}
+      </main>
       <Footer />
     </div>
   );

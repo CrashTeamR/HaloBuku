@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <header className="shadow-sm p-4">
+    <header className="shadow-sm p-4 fixed top-0 min-w-full z-10 bg-gray-200">
       <div className="container m-auto flex justify-between items-center">
         <Link href="/">
           <Image
