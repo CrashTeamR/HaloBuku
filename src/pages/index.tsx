@@ -7,7 +7,6 @@ import {
 } from "../../public/images";
 import Head from "next/head";
 import Image from "next/image";
-import { GetStaticProps } from "next";
 
 export default function Home() {
   return (
