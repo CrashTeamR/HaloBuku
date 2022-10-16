@@ -130,7 +130,7 @@ Details on deployment using Vercel or Netlify here.
 {
   "name": "First Last",
   "email": "firstlast@user.com",
-  "password": "password123
+  "password": "password123"
 }
 ```
 
