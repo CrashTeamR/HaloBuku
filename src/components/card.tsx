@@ -1,4 +1,3 @@
-import { examplePicture } from "../../public/images";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +20,10 @@ export const Card = ({ data }) => {
             {data.author}
           </h3>
           <h2 className="text-2xl font-bold tracking-tight text-orange-500 dark:text-white">
-            {`Rp. ${data.price}`}
+            {data.price.toLocaleString("id-ID", {
+              style: "currency",
+              currency: "IDR",
+            })}
           </h2>
         </a>
       </Link>
