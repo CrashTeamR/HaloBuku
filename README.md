@@ -54,7 +54,6 @@ Commerce to buy various books such as novels
     - next/image
 - Data Fetching
   - REST API: `axios` / `swr`
-  - GraphQL: `urql` / `graphql-request`
 - Misc
   - Prettier
   - ESLint
@@ -95,63 +94,33 @@ Details on deployment using Vercel or Netlify here.
   - `http://localhost:8000`
 - Production REST API URL:
   - `https://halobuku.railway.app`
-  - `https://halobuku.ericprd.site`
+  - `https://halobuku.ericprd.site/api/v1`
 
-| HTTP   | Endpoint              | Description      |
-| ------ | --------------------- | ---------------- |
-| GET    | `/books?$lookup=*`    | Get all books    |
-| POST   | `/books/`             | Create book      |
-| PATCH  | `/books/:id`          | Patch book       |
-| DELETE | `/books/:id`          | Delete book      |
-| GET    | `/products?$lookup=*` | Get all products |
-| POST   | `/products/`          | Create product   |
-| PATCH  | `/products/:id`       | Patch product    |
-| DELETE | `/products/:id`       | Delete product   |
+| HTTP   | Endpoint     | Description       |
+| ------ | ------------ | ----------------- |
+| GET    | `/books`     | Get all books     |
+| GET    | `/books/:id` | Get book by id    |
+| POST   | `/books/`    | Create book       |
+| DELETE | `/books/:id` | Delete book by id |
+| POST   | `/register`  | Register user     |
+| POST   | `/verify`    | Verify user       |
+| POST   | `/login`     | Login             |
 
 ## Data Model
 
 ### Books
 
-```json
-{
-  "id": "abc123",
-  "title": "Hujan",
-  "publishedYear": 2022,
-  "author": "Tere Liye",
-  "description": "Novel from Indonesia",
-  "coverImageUrl": "",
-  "thumbnailImageUrl": "",
-  "price": 200000,
-  "isAvailable": true,
-  "quantity": 100
-}
-```
-
 ```ts
-type Book = {
-  id: string;
-  title: string;
-  author: string;
-  coverImageUrl: string;
-  thumbnailImageUrl?: string;
-  description: string;
-  isAvailable: boolean;
-  price: number;
-  quantity: number;
-  publishedYear?: number;
-};
-```
-
-```graphql
-type Resource {
-  id: String!
-  title: String!
-  description: String
-  isAvailable: Boolean!
-  quantity: Number!
-  tags: [Tag!]!
-  createdAt: String!
-  updatedAt: String!
+{
+   _id: Number,
+  title: String,
+  author: String,
+  publishedYear: Number,
+  description: String,
+  image: String,
+  price: Number,
+  quantity: Number,
+  isAvailable: Boolean
 }
 ```
 
@@ -159,18 +128,10 @@ type Resource {
 
 ```json
 {
-  "id": "abc123",
   "name": "First Last",
-  "email": "firstlast@user.com"
+  "email": "firstlast@user.com",
+  "password": "password123
 }
 ```
 
-```graphql
-type User {
-  id: String!
-  name: String!
-  email: String!
-}
-```
-
-Base URL: `https://api.example.com`
+Base URL: `https://halobuku.ericprd.site/api/v1`
