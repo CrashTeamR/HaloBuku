@@ -46,7 +46,7 @@ export default function Home({ data }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get books.
   // You can use any data fetching library
-  const res = await fetch("https://halobuku.ericprd.site/api/v1/books");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`);
   const data = await res.json();
 
   // By returning { props: { books } }, the Blog component
