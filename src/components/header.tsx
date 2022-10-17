@@ -1,6 +1,8 @@
 import { blueLogo, shoppingBag, searchIcon } from "../../public/images";
 import Image from "next/image";
 import Link from "next/link";
+import LoginButton from "./login-button";
+import RegisterButton from "./register-button";
 
 export const Header = () => {
   return (
@@ -17,7 +19,7 @@ export const Header = () => {
             />
           </a>
         </Link>
-        <form className="flex w-1/3 items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200">
+        <form className="relative flex w-3/6 translate-x-10  items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200">
           <label
             htmlFor="search-keyword"
             className="flex cursor-not-allowed items-center opacity-50"
@@ -33,11 +35,18 @@ export const Header = () => {
             disabled
           />
         </form>
-        <Image
-          src={shoppingBag}
-          alt="Shopping Bag Icon"
-          className="cursor-not-allowed opacity-50"
-        />
+        {sessionStorage.getItem("token") ? (
+          <Image
+            src={shoppingBag}
+            alt="Shopping Bag Icon"
+            className="cursor-not-allowed opacity-50"
+          />
+        ) : (
+          <div className="space-x-3">
+            <LoginButton />
+            <RegisterButton />
+          </div>
+        )}
       </div>
     </header>
   );
