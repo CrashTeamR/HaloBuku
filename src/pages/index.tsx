@@ -17,15 +17,19 @@ export default function Home({ data }: HomeProps) {
       </Head>
 
       <Layout>
-        <div className="my-10">
-          <h1 className="text-3xl font-bold text-blue-800 text-center my-4 md:text-left">
-            Buku Rilisan Terbaru
-          </h1>
-        </div>
-        <div className="flex max-w-screen-xl justify-center md:justify-start mx-auto items-center px-5 gap-3 flex-wrap">
-          {data?.books?.map((book) => {
-            return <Card key={book._id} data={book} />;
-          })}
+        <div className="m-auto flex flex-col items-start justify-center px-8">
+          <div className="m-auto flex flex-col">
+            <div className="my-10 w-full">
+              <h1 className="my-4 text-center text-3xl font-bold text-blue-800 lg:text-left">
+                Buku Rilisan Terbaru
+              </h1>
+            </div>
+            <div className="flex max-w-screen-xl flex-wrap items-center  justify-center gap-8  lg:justify-between">
+              {data?.books?.map((book) => {
+                return <Card key={book._id} data={book} />;
+              })}
+            </div>
+          </div>
         </div>
       </Layout>
     </>
