@@ -2,7 +2,7 @@ export type Book = {
   _id: string;
   title: string;
   author: string;
-  image: string;
+  image?: string;
   coverImageUrl?: string;
   thumbnailImageUrl?: string;
   description: string;

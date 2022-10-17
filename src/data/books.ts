@@ -2,7 +2,7 @@ import { Books } from "../types";
 
 export const dataBooks: Books = [
   {
-    id: "1",
+    _id: "1",
     title: "Securing DevOps",
     publishedYear: 2018,
     author: "Julien Vehent",
@@ -15,11 +15,11 @@ export const dataBooks: Books = [
       "https://images.manning.com/360/480/resize/book/d/87311f5-cf68-4ac2-9074-06940e10dd53/Vehent-SDO-HI.png",
   },
   {
-    id: "9789000307975",
+    _id: "9789000307975",
     title: "Vrienden voor het leven",
     author: "Maeve Binchy",
     description:
-      "Vrienden voor het leven is het verhaal van drie vriendinnen die op weg naar volwassenheid verwikkeld raken in een zonderlinge driehoeksverhouding. Benny en Eve, boezemvriendinnen uit het Ierse dorpje Knockglen, gaan in Dublin studeren en sluiten daar al snel vriendschap met de aantrekkelijke en ambitieuze Nan. Het opwindende studentenleven brengt hun echter niet alleen geluk maar ook verdriet. Met haar grote vermogen om menselijke gevoelens herkenbaar neer te zetten weet Maeve Binchy geluk en verdriet, warmte en humor samen te brengen in deze meeslepende roman. Vrienden voor het leven verscheen voor het eerst in 1991 en is het favoriete boek van vele Maeve Binchy-fans. Het boek is inmiddels toe aan de zeventiende druk. In 1995 werd het zeer succesvol verfilmd onder de titel Circle of Friends met Minnie Driver en Chris O’Donnell in de hoofdrollen.",
+      "Vrienden voor het leven is het verhaal van drie vriendinnen die op weg naar volwassenhe id verwikkeld raken in een zonderlinge driehoeksverhouding. Benny en Eve, boezemvriendinnen uit het Ierse dorpje Knockglen, gaan in Dublin studeren en sluiten daar al snel vriendschap met de aantrekkelijke en ambitieuze Nan. Het opwindende studentenleven brengt hun echter niet alleen geluk maar ook verdriet. Met haar grote vermogen om menselijke gevoelens herkenbaar neer te zetten weet Maeve Binchy geluk en verdriet, warmte en humor samen te brengen in deze meeslepende roman. Vrienden voor het leven verscheen voor het eerst in 1991 en is het favoriete boek van vele Maeve Binchy-fans. Het boek is in middels toe aan de zeventiende druk. In 1995 werd het zeer succesvol verfilmd onder de titel Circle of Friends met Minnie Driver en Chris O’Donnell in de hoofdrollen.",
     coverImageUrl:
       "http://s.s-bol.com/imgbase0/imagebase/large/FC/5/3/6/6/1001004011806635.jpg",
     price: 150000,
@@ -27,7 +27,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9780552159722",
+    _id: "9780552159722",
     title: "Deception point",
     author: "Dan Brown",
     description:
@@ -39,7 +39,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789022558027",
+    _id: "9789022558027",
     title: "Magic staff",
     author: "Terry Brooks",
     description:
@@ -51,7 +51,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9781841499789",
+    _id: "9781841499789",
     title: "Bloodfire Quest",
     author: "Terry Brooks",
     description:
@@ -63,7 +63,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9781409117933",
+    _id: "9781409117933",
     title: "A Week in Winter",
     author: "Maeve Binchy",
     description:
@@ -75,7 +75,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789460681387",
+    _id: "9789460681387",
     title: "Blue Curacao",
     author: "Linda van Rijn",
     description:
@@ -87,7 +87,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9780751548525",
+    _id: "9780751548525",
     title: "Safe Haven",
     author: "Nicholas Sparks",
     description:
@@ -99,7 +99,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789023429258",
+    _id: "9789023429258",
     title: "De wereld volgens Garp",
     author: "John Irving",
     description:
@@ -111,7 +111,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789460680854",
+    _id: "9789460680854",
     title: "Winter Chalet",
     author: "Linda van Rijn",
     description:
@@ -123,7 +123,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789023464044",
+    _id: "9789023464044",
     title: "De Vliegeraar",
     author: "Khaled Hosseini",
     description:
@@ -135,7 +135,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789024529445",
+    _id: "9789024529445",
     title: "De delta deceptie",
     author: "Dan Brown",
     description:
@@ -147,7 +147,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789044309904",
+    _id: "9789044309904",
     title: "Hou je mond!",
     author: "Sophie Kinsella",
     description:
@@ -159,7 +159,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789023467786",
+    _id: "9789023467786",
     title: "In een mens",
     author: "John Irving",
     description:
@@ -171,7 +171,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9780751548556",
+    _id: "9780751548556",
     title: "The lucky one",
     author: "Nicholas Sparks",
     description:
@@ -183,7 +183,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9780751542974",
+    _id: "9780751542974",
     title: "Best of me",
     author: "Nicholas Sparks",
     description:
@@ -195,7 +195,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789000316090",
+    _id: "9789000316090",
     title: "Hotel aan zee",
     author: "Maeve Binchy",
     description:
@@ -207,7 +207,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789024561858",
+    _id: "9789024561858",
     title: "Inferno",
     author: "Dan Brown",
     description:
@@ -219,7 +219,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789046113110",
+    _id: "9789046113110",
     title: "In het hart",
     author: "David Baldacci",
     description:
@@ -231,7 +231,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9781447229902",
+    _id: "9781447229902",
     title: "The Hit",
     author: "David Baldacci",
     description:
@@ -243,7 +243,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789044339482",
+    _id: "9789044339482",
     title: "De Tennisparty",
     author: "Sophie Kinsella",
     description:
@@ -255,7 +255,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9780552778459",
+    _id: "9780552778459",
     title: "In One Person",
     author: "John Irving",
     description:
@@ -267,7 +267,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789400501157",
+    _id: "9789400501157",
     title: "De aanslag",
     author: "David Baldacci",
     description:
@@ -279,7 +279,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789044339338",
+    _id: "9789044339338",
     title: "Mag ik je nummer even?",
     author: "Sophie Kinsella",
     description:
@@ -291,7 +291,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789022556627",
+    _id: "9789022556627",
     title: "Jarka Ruus",
     author: "Terry Brooks",
     description:
@@ -303,7 +303,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789460680755",
+    _id: "9789460680755",
     title: "Last Minute",
     author: "Linda van Rijn",
     description:
@@ -315,7 +315,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "9789023464143",
+    _id: "9789023464143",
     title: "Duizend schitterende zonnen",
     author: "Khaled Hosseini",
     description:
@@ -327,7 +327,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "27836578265",
+    _id: "27836578265",
     title: "The Hating Game",
     author: "Sally Thorne",
     description:
@@ -339,7 +339,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293845235",
+    _id: "293845235",
     title: "The Unhoneymooners",
     author: "Christina Lauren",
     description:
@@ -351,7 +351,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "2938687535",
+    _id: "2938687535",
     title: "Fangirl",
     author: "Rainbow Rowell",
     description:
@@ -363,7 +363,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Book Lovers",
     author: "Emily Henry",
     description:
@@ -375,7 +375,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Tenggelamnya Kapal Van Der Wijck",
     author: "Hamka",
     description:
@@ -387,7 +387,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Burlian",
     author: "Tere Liye",
     description:
@@ -399,7 +399,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Kitab Omong Kosong",
     author: "Seno Gumira Ajidarma",
     description:
@@ -411,7 +411,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Ayat-Ayat Cinta",
     author: "Habiburrahman El-Shirazy",
     description:
@@ -423,7 +423,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Hafalan Shalat Delisa",
     author: "Tere Liye",
     description:
@@ -435,7 +435,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Di Bawah Lindungan Ka'bah",
     author: "Hamka",
     description:
@@ -447,7 +447,7 @@ export const dataBooks: Books = [
     isAvailable: true,
   },
   {
-    id: "293835235",
+    _id: "293835235",
     title: "Gadis Pantai",
     author: "Pramoedya Ananta Toer",
     description:
