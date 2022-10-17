@@ -5,15 +5,15 @@ export const Card = ({ data }) => {
   return (
     <>
       <Link href={`/books/${data._id}`}>
-        <a className="flex h-[30rem] max-w-xs flex-col items-center rounded-lg border border-gray-200 bg-white py-10 px-10 text-gray-600 shadow-md">
+        <a className="flex h-[30rem] max-w-xs flex-col items-center rounded-lg border border-gray-200 bg-white py-10 px-10 text-gray-600 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
           <Image
             src={data.image}
             alt={data.title}
             width={300}
             height={300}
-            className="bg-cover object-contain"
+            className="object-contain"
           />
-          <div className="mt-10 max-w-[18rem] px-5 text-center">
+          <div className="mt-3 flex max-w-[18rem] flex-col justify-evenly px-5 text-center">
             <h1 className="mb-2 mt-5 truncate text-center text-2xl font-bold tracking-tight">
               {data.title}
             </h1>
