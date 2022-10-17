@@ -7,10 +7,9 @@ import { Layout } from "../../components";
 import type { Book } from "../../types";
 
 function useGetBookData(bookId) {
-  const { data, error } = useSWR(
-    `${process.env.NEXT_PUBLIC_API_URL}/books/${bookId}`,
-    fetcher
-  );
+  const URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const { data, error } = useSWR(`${URL}/books/${bookId}`, fetcher);
 
   return {
     data: data,
