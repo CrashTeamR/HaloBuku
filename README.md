@@ -1,37 +1,55 @@
 # HaloBuku
 
-Commerce to buy various books such as novels
+Commerce to buy various books such as novels.
 
 ![Screenshot 1]()
 
 ![Screenshot 2]()
 
+## References
+
+- https://gramedia.com
+
 ## Links
 
-### Production
+### Frontend
 
-- https://halobuku.netlify.app/
-- https://halobuku.ericprd.site/
-- https://halobuku.ersankarimi.com/
-- https://halobuku.bayusatriow.me/
-- https://halobuku.dennysh.com/
+Production:
 
-### Local
+- https://halobuku.netlify.app
+- https://halobuku.ericprd.site
+- https://halobuku.baysatriow.me
+- https://halobuku.dennysh.com
+- https://halobuku.ersankarimi.com
+
+Local:
 
 - http://localhost:3000 for Next.js
 
+### Backend
+
+Production:
+
+- `https://halobuku.ericprd.site/api/v1`
+- `https://halobuku-api.ericprd.site/v1`
+- `https://halobuku.railway.app`
+
+Local:
+
+- `http://localhost:5500`
+
 ### Design
 
-- Figma Mockup : [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
-- Figma Prototype :
-- Whimsical Flowchart : [Whimsical Link](https://whimsical.com/flowchart-AEp4LaBGjDUQFUG5N3GVkU@2Ux7TurymLpWJ3evPGyq)
+- Figma Mockup: [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
+- Whimsical Flowchart: [Whimsical Link](https://whimsical.com/flowchart-AEp4LaBGjDUQFUG5N3GVkU@2Ux7TurymLpWJ3evPGyq)
 
 ## Main Features
 
-- Display All Books
-- Book's Details
-- Cart Page
-- Checkout Books
+- [x] Display all books
+- [x] Book details
+- [ ] Search books
+- [ ] Cart page
+- [ ] Checkout books
 
 ## Team Members
 
@@ -94,12 +112,6 @@ Details on deployment using Vercel or Netlify here.
 
 ## REST API Endpoints
 
-- Local REST API URL:
-  - `http://localhost:8000`
-- Production REST API URL:
-  - `https://halobuku.railway.app`
-  - `https://halobuku.ericprd.site/api/v1`
-
 | HTTP   | Endpoint     | Description       |
 | ------ | ------------ | ----------------- |
 | GET    | `/books`     | Get all books     |
@@ -137,5 +149,3 @@ Details on deployment using Vercel or Netlify here.
   "password": "password123"
 }
 ```
-
-Base URL: `https://halobuku.ericprd.site/api/v1`
