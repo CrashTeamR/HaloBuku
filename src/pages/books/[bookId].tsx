@@ -1,10 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import { fetcher, useSWR } from "../../libs";
 import { Layout } from "../../components";
 import type { Book } from "../../types";
+import { useRouter } from "next/router";
+
+interface BookDetailsProps {
+  book: Book;
+}
 
 function useGetBookData(bookId) {
   const URL = process.env.NEXT_PUBLIC_API_URL;
@@ -18,9 +22,7 @@ function useGetBookData(bookId) {
   };
 }
 
-export default function BookId() {
-  const router = useRouter();
-  const { bookId } = router.query;
+export default function BookId({ bookId }) {
   const { data, isLoading, isError } = useGetBookData(bookId);
 
   return (
@@ -38,8 +40,14 @@ export default function BookId() {
   );
 }
 
-interface BookDetailsProps {
-  book: Book;
+export async function getServerSideProps({ params }) {
+  const bookId = params.bookId;
+
+  return {
+    props: {
+      bookId,
+    },
+  };
 }
 
 export const BookDetails = ({ book }: BookDetailsProps) => {
