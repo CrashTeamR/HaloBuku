@@ -11,9 +11,9 @@ export default function Login() {
     password: "",
   });
 
-  const onChangeHandler = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
     switch (name) {
       case "email":
         setInput({ ...input, email: value });
@@ -26,15 +26,17 @@ export default function Login() {
     }
   };
 
-  const onSubmitHandler = async (e) => {
-    e.preventDefault();
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
 
     const payload = { ...input };
+
     try {
       const req = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/login`,
         payload
       );
+
       const { token } = req.data;
       localStorage.setItem("token", token);
       if (req.status === 200) router.push("/");
@@ -45,7 +47,7 @@ export default function Login() {
 
   return (
     <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] space-y-5 rounded-lg bg-white p-[2rem_3rem]">
-      <h1 className="text-center text-2xl font-semibold uppercase">Login</h1>
+      <h1 className="text-center text-2xl font-semibold ">Masuk</h1>
       <form className="max-w-sm space-y-5" onSubmit={onSubmitHandler}>
         <div className="flex justify-between space-x-3">
           <label htmlFor="email">Email: </label>
@@ -70,7 +72,7 @@ export default function Login() {
           />
         </div>
         <div className="flex justify-center">
-          <SubmitButton />
+          <SubmitButton buttonText="Masuk" />
         </div>
       </form>
     </div>
