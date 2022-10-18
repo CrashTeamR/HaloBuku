@@ -24,7 +24,7 @@ export default function Home({ data }: HomeProps) {
                 Buku Rilisan Terbaru
               </h1>
             </div>
-            <div className="flex max-w-screen-xl flex-wrap items-center  justify-center gap-8  lg:justify-between">
+            <div className="mx-auto flex w-full flex-wrap items-center justify-center gap-8 md:max-w-screen-lg xl:justify-start">
               {data?.books?.map((book) => {
                 return <Card key={book._id} data={book} />;
               })}
