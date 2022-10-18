@@ -3,8 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import LoginButton from "./login-button";
 import RegisterButton from "./register-button";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
+  const [userToken, setUserToken] = useState("");
+
+  useEffect(() => {
+    setUserToken(localStorage.getItem("token"));
+  }, []);
+
   return (
     <header className="fixed top-0 z-10 min-w-full bg-gray-200 p-[0.5rem_2rem] shadow-md">
       <div className="container m-auto flex items-center justify-between">
@@ -35,7 +42,7 @@ export const Header = () => {
             disabled
           />
         </form>
-        {sessionStorage.getItem("token") ? (
+        {userToken ? (
           <Image
             src={shoppingBag}
             alt="Shopping Bag Icon"

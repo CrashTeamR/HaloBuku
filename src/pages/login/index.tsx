@@ -36,7 +36,7 @@ export default function Login() {
         payload
       );
       const { token } = req.data;
-      sessionStorage.setItem("token", token);
+      localStorage.setItem("token", token);
       if (req.status === 200) router.push("/");
     } catch (error) {
       console.log(error);
