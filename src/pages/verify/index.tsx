@@ -69,7 +69,7 @@ export default function Verify() {
           />
         </div>
         <div className="flex justify-center">
-          <SubmitButton />
+          <SubmitButton buttonText="Verifikasi" />
         </div>
       </form>
     </div>
