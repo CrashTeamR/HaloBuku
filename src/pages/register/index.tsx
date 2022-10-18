@@ -88,7 +88,7 @@ export default function Register() {
           />
         </div>
         <div className="flex justify-center">
-          <SubmitButton />
+          <SubmitButton buttonText="Daftar" />
         </div>
       </form>
     </div>
