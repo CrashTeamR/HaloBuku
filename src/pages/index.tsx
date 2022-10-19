@@ -12,7 +12,7 @@ export default function Home({ data }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Home | Halo Buku</title>
+        <title>Beranda | Halo Buku</title>
       </Head>
 
       <Layout>
