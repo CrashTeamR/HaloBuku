@@ -1,4 +1,9 @@
-import { blueLogo, shoppingBag, searchIcon } from "../../public/images";
+import {
+  blueLogo,
+  shoppingBag,
+  searchIcon,
+  menuIcon,
+} from "../../public/images";
 import Image from "next/image";
 import Link from "next/link";
 import LoginButton from "./login-button";
@@ -49,11 +54,20 @@ export const Header = () => {
             className="cursor-not-allowed opacity-50"
           />
         ) : (
-          <div className="space-x-3">
+          <div className="hidden space-x-3 md:block">
             <LoginButton />
             <RegisterButton />
           </div>
         )}
+        <div className="md:hidden">
+          <Image
+            src={menuIcon}
+            alt="Menu Icon"
+            width={25}
+            height={25}
+            className="cursor-pointer"
+          ></Image>
+        </div>
       </div>
     </header>
   );
