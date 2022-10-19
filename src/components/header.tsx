@@ -72,7 +72,7 @@ export const Header = () => {
         >
           <label
             htmlFor="search-keyword"
-            className="flex cursor-not-allowed items-center opacity-50"
+            className="flex  items-center opacity-50"
           >
             <Image src={searchIcon} alt="Search Icon" width={24} height={24} />
           </label>
