@@ -7,6 +7,7 @@ import happyBook from "./happy-book.png";
 import leftArrow from "./left-arrow.svg";
 import rightArrow from "./right-arrow.svg";
 import basicRightArrow from "./basic-right-arrow.svg";
+import menuIcon from "./menu-icon.svg";
 
 export {
   blueLogo,
@@ -18,4 +19,5 @@ export {
   leftArrow,
   rightArrow,
   basicRightArrow,
+  menuIcon,
 };
