@@ -1,7 +1,6 @@
-import Head from "next/head";
-
 import { Card, Layout } from "../components";
 import type { Books } from "../types";
+import Head from "next/head";
 
 interface HomeProps {
   data: {
@@ -19,8 +18,8 @@ export default function Home({ data }: HomeProps) {
       <Layout>
         <div className="m-auto flex flex-col items-start justify-center px-8">
           <div className="m-auto flex flex-col">
-            <div className="my-10 w-full">
-              <h1 className="my-4 text-center text-3xl font-bold text-blue-800 lg:text-left">
+            <div className="my-10  w-full">
+              <h1 className="my-4 text-center text-3xl font-bold text-blue-800 xl:text-left">
                 Buku Rilisan Terbaru
               </h1>
             </div>
@@ -41,6 +40,7 @@ export async function getStaticProps() {
 
   const res = await fetch(`${URL}/books`);
   const data = await res.json();
+
   return {
     props: {
       data,
