@@ -62,7 +62,7 @@ export const Header = () => {
         )}
         <div className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? (
-            <div className="absolute top-[4rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-slate-200 p-10">
+            <div className="absolute top-[4rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-gray-200 p-10">
               <div>
                 <LoginButton />
               </div>
@@ -71,7 +71,7 @@ export const Header = () => {
               </div>
             </div>
           ) : (
-            <div className="absolute top-[-10rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-slate-200 p-10">
+            <div className="absolute top-[-10rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-gray-200 p-10">
               <div>
                 <LoginButton />
               </div>
@@ -88,7 +88,6 @@ export const Header = () => {
             className="cursor-pointer"
           ></Image>
         </div>
-        {/* <MobileNav open={open} setOpen={setOpen} /> */}
       </div>
     </header>
   );
