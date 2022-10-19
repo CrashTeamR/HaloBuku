@@ -26,9 +26,13 @@ export default function BookId({ bookId }) {
 
       {isLoading && <p>Loading book details...</p>}
       {isError && <div>Failed to load book details</div>}
-      {!isLoading && !isError && data?.book && (
-        <BookDetails book={data?.book} />
-      )}
+      {!isLoading &&
+        !isError &&
+        data?.book && (
+          <Head>
+            <title>{data.book.title} | Halo Buku</title>
+          </Head>
+        ) && <BookDetails book={data?.book} />}
     </Layout>
   );
 }
