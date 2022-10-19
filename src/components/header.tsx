@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [userToken, setUserToken] = useState("");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     setUserToken(localStorage.getItem("token"));
@@ -59,7 +60,26 @@ export const Header = () => {
             <RegisterButton />
           </div>
         )}
-        <div className="md:hidden">
+        <div className="md:hidden" onClick={() => setOpen(!open)}>
+          {open ? (
+            <div className="absolute top-[4rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-slate-200 p-10">
+              <div>
+                <LoginButton />
+              </div>
+              <div>
+                <RegisterButton />
+              </div>
+            </div>
+          ) : (
+            <div className="absolute top-[-10rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-slate-200 p-10">
+              <div>
+                <LoginButton />
+              </div>
+              <div>
+                <RegisterButton />
+              </div>
+            </div>
+          )}
           <Image
             src={menuIcon}
             alt="Menu Icon"
@@ -68,6 +88,7 @@ export const Header = () => {
             className="cursor-pointer"
           ></Image>
         </div>
+        {/* <MobileNav open={open} setOpen={setOpen} /> */}
       </div>
     </header>
   );
