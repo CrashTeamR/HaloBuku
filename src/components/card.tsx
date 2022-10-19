@@ -21,10 +21,11 @@ export const Card = ({ data }) => {
               {data.author}
             </h3>
             <h2 className="text-2xl font-bold tracking-tight text-orange-500">
-              {data.price.toLocaleString("id-ID", {
+              {new Intl.NumberFormat("id-ID", {
                 style: "currency",
                 currency: "IDR",
-              })}
+                maximumSignificantDigits: 3,
+              }).format(data.price)}
             </h2>
           </div>
         </a>

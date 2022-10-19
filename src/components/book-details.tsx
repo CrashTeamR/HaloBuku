@@ -32,10 +32,11 @@ export const BookDetails = ({ book }: BookDetailsProps) => {
           <div>
             <h4 className="my-1 text-base text-gray-700">Harga</h4>
             <h3 className="text-xl font-semibold">
-              {book?.price.toLocaleString("id-ID", {
+              {new Intl.NumberFormat("id-ID", {
                 style: "currency",
                 currency: "IDR",
-              })}
+                maximumSignificantDigits: 3,
+              }).format(book.price)}
             </h3>
           </div>
           <div>
