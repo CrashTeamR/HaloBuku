@@ -39,18 +39,18 @@ export const Header = () => {
 
   useEffect(() => {
     setUserToken(localStorage.getItem("token"));
-  }, []);
 
-  useEffect(() => {
     if (router.pathname === "/search") {
+      const keyword = router.query?.q.toString();
+
       router.push({
         pathname: "/search",
-        query: { q: router.query?.q },
+        query: { q: keyword },
       });
 
-      setSearchValue(router.query.q || "");
+      setSearchValue(keyword || "");
     }
-  }, []);
+  }, [router]);
 
   return (
     <header className="fixed top-0 z-10 min-w-full bg-gray-200 p-[0.5rem_2rem] shadow-md">
