@@ -6,16 +6,50 @@ import {
 } from "../../public/images";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import LoginButton from "./login-button";
 import RegisterButton from "./register-button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export const Header = () => {
+  const router = useRouter();
   const [userToken, setUserToken] = useState("");
   const [open, setOpen] = useState(false);
+  const searchRef = useRef(null);
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleChange = (event) => {
+    setSearchValue(() => event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!searchValue) {
+      return;
+    }
+
+    router.push({
+      pathname: "/search",
+      query: { q: searchValue },
+    });
+
+    searchRef.current.blur();
+  };
 
   useEffect(() => {
     setUserToken(localStorage.getItem("token"));
+  }, []);
+
+  useEffect(() => {
+    if (router.pathname === "/search") {
+      router.push({
+        pathname: "/search",
+        query: { q: router.query?.q },
+      });
+
+      setSearchValue(router.query.q || "");
+    }
   }, []);
 
   return (
@@ -32,27 +66,33 @@ export const Header = () => {
             />
           </a>
         </Link>
-        <form className="relative flex w-3/6 translate-x-10  items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200">
+        <form
+          className="relative flex w-3/6 translate-x-10   items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200"
+          onSubmit={handleSubmit}
+        >
           <label
             htmlFor="search-keyword"
-            className="flex cursor-not-allowed items-center opacity-50"
+            className="flex  items-center opacity-50"
           >
             <Image src={searchIcon} alt="Search Icon" width={24} height={24} />
           </label>
           <input
-            type="text"
+            type="search"
             name="search-keyword"
             id="search-keyword"
             placeholder="Telusuri judul, penulis, or kata kunci ..."
-            className="w-full cursor-not-allowed appearance-none bg-transparent p-[1px] text-gray-800 placeholder:text-xs placeholder:text-blue-600/40 focus:outline-none disabled:opacity-50"
-            disabled
+            className="w-full appearance-none bg-transparent p-[1px] text-gray-700 placeholder:text-xs placeholder:text-blue-600/40 focus:outline-none disabled:opacity-50"
+            autoComplete="off"
+            onChange={handleChange}
+            value={searchValue}
+            ref={searchRef}
           />
         </form>
         {userToken ? (
           <Image
             src={shoppingBag}
             alt="Shopping Bag Icon"
-            className="cursor-not-allowed opacity-50"
+            className=" opacity-50"
           />
         ) : (
           <div className="hidden space-x-3 md:block">
