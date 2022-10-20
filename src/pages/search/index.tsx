@@ -6,11 +6,14 @@ interface SearchProps {
   data: {
     books: Books;
   };
-  query: object;
+  query: {
+    q: string;
+  };
 }
 
 export default function SearchPage({ data, query }: SearchProps) {
   const { books } = data;
+
   return (
     <>
       <Head>
