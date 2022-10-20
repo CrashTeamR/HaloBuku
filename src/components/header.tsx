@@ -50,7 +50,7 @@ export const Header = () => {
 
       setSearchValue(keyword || "");
     }
-  }, [router]);
+  }, []);
 
   return (
     <header className="fixed top-0 z-10 min-w-full bg-gray-200 p-[0.5rem_2rem] shadow-md">
