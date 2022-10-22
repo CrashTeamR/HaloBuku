@@ -2,19 +2,19 @@ import { useState } from "react";
 import SubmitButton from "../../components/submit-button";
 import axios from "axios";
 import { useRouter } from "next/router";
-
-type Position = {
-  location: string;
-};
+import Head from "next/head";
 
 export default function Register() {
   const router = useRouter();
 
-  const [input, setInput] = useState({
+  const [payload, setPayload] = useState({
     name: "",
     email: "",
     password: "",
   });
+
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onChangeHandler = (e) => {
     const name = e.target.name;
@@ -22,24 +22,23 @@ export default function Register() {
 
     switch (name) {
       case "name":
-        setInput({ ...input, name: value });
+        setPayload({ ...payload, name: value });
         break;
       case "email":
-        setInput({ ...input, email: value });
+        setPayload({ ...payload, email: value });
         break;
       case "password":
-        setInput({ ...input, password: value });
+        setPayload({ ...payload, password: value });
         break;
       default:
-        return input;
+        return payload;
     }
   };
 
   const onSubmitHandler = async (e) => {
-    e.preventDefault();
-
-    const payload = { ...input };
     try {
+      setIsLoading(true);
+      e.preventDefault();
       const req = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/register`,
         payload
@@ -47,50 +46,66 @@ export default function Register() {
       if (req.status === 201) router.push("/verify");
     } catch (error) {
       console.log(error);
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] space-y-5 rounded-lg bg-white p-[2rem_3rem]">
-      <h1 className="text-center text-2xl font-semibold uppercase">Register</h1>
-      <form className="max-w-sm space-y-5" onSubmit={onSubmitHandler}>
-        <div className="flex justify-between space-x-3">
-          <label htmlFor="name">Full Name: </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="border-b border-gray-400/60 outline-none"
-            onChange={onChangeHandler}
-            value={input.name}
-          />
+    <>
+      <Head>
+        <title>Daftar | Halo Buku</title>
+      </Head>
+
+      <section className="flex h-screen w-full items-center justify-center p-8">
+        <div className="flex flex-col gap-8 rounded-lg bg-white  p-[2rem_3rem] shadow-xl lg:w-[30%] xl:w-[28%] 2xl:w-[25%]">
+          <h1 className="text-center text-2xl font-semibold">Daftar</h1>
+          <form className="max-w-sm space-y-5" onSubmit={onSubmitHandler}>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="name">Nama Lengkap</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="border-b border-gray-400/60 outline-none"
+                onChange={onChangeHandler}
+                placeholder="Masukkan nama lengkap"
+                value={payload.name}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Masukkan email"
+                className="border-b border-gray-400/60 outline-none"
+                onChange={onChangeHandler}
+                value={payload.email}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Masukkan password"
+                className="border-b border-gray-400/60 outline-none"
+                onChange={onChangeHandler}
+                value={payload.password}
+              />
+            </div>
+            <div className="flex justify-center">
+              <SubmitButton isError={isError} isLoading={isLoading}>
+                Daftar
+              </SubmitButton>
+            </div>
+          </form>
         </div>
-        <div className="flex justify-between space-x-3">
-          <label htmlFor="email">Email: </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className="border-b border-gray-400/60 outline-none"
-            onChange={onChangeHandler}
-            value={input.email}
-          />
-        </div>
-        <div className="flex justify-between space-x-3">
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            className="border-b border-gray-400/60 outline-none"
-            onChange={onChangeHandler}
-            value={input.password}
-          />
-        </div>
-        <div className="flex justify-center">
-          <SubmitButton buttonText="Daftar" />
-        </div>
-      </form>
-    </div>
+      </section>
+    </>
   );
 }

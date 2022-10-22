@@ -16,9 +16,9 @@ export default function Home({ data }: HomeProps) {
       </Head>
 
       <Layout>
-        <div className="m-auto flex flex-col items-start justify-center px-8">
-          <div className="m-auto flex flex-col">
-            <div className="my-10  w-full">
+        <div className="flex flex-col items-start justify-center">
+          <div className="mx-auto flex flex-col justify-center">
+            <div className="my-10 w-full">
               <h1 className="my-4 text-center text-3xl font-bold text-blue-800 xl:text-left">
                 Buku Rilisan Terbaru
               </h1>
