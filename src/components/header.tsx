@@ -67,7 +67,7 @@ export const Header = () => {
           </a>
         </Link>
         <form
-          className="relative flex w-3/6 translate-x-10   items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200"
+          className="relative hidden w-3/6 translate-x-10 items-center   justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200 lg:flex"
           onSubmit={handleSubmit}
         >
           <label
@@ -100,15 +100,38 @@ export const Header = () => {
             <RegisterButton />
           </div>
         )}
-        <div className="md:hidden" onClick={() => setOpen(!open)}>
+        <div className="md:hidden">
           {open ? (
             <div className="absolute top-[4rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-gray-200 p-10">
-              <div>
-                <LoginButton />
-              </div>
-              <div>
-                <RegisterButton />
-              </div>
+              <LoginButton />
+              <RegisterButton />
+              <form
+                className="flex items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200"
+                onSubmit={handleSubmit}
+              >
+                <label
+                  htmlFor="search-keyword"
+                  className="flex  items-center opacity-50"
+                >
+                  <Image
+                    src={searchIcon}
+                    alt="Search Icon"
+                    width={24}
+                    height={24}
+                  />
+                </label>
+                <input
+                  type="search"
+                  name="search-keyword"
+                  id="search-keyword"
+                  placeholder="Telusuri judul, penulis, or kata kunci ..."
+                  className="w-full appearance-none bg-transparent p-[1px] text-gray-700 placeholder:text-xs placeholder:text-blue-600/40 focus:outline-none disabled:opacity-50"
+                  autoComplete="off"
+                  onChange={handleChange}
+                  value={searchValue}
+                  ref={searchRef}
+                />
+              </form>
             </div>
           ) : (
             <div className="absolute top-[-10rem] right-0 left-0 flex flex-col items-center justify-center gap-10 bg-gray-200 p-10">
@@ -125,8 +148,9 @@ export const Header = () => {
             alt="Menu Icon"
             width={25}
             height={25}
+            onClick={() => setOpen(!open)}
             className="cursor-pointer"
-          ></Image>
+          />
         </div>
       </div>
     </header>
