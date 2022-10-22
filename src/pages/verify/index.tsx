@@ -45,7 +45,7 @@ export default function Verify() {
 
   return (
     <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] space-y-5 rounded-lg bg-white p-[2rem_3rem]">
-      <h1 className="text-center text-2xl font-semibold uppercase">Register</h1>
+      <h1 className="text-center text-2xl font-semibold uppercase">Daftar</h1>
       <form className="max-w-sm space-y-5" onSubmit={onSubmitHandler}>
         <div className="flex justify-between space-x-3">
           <label htmlFor="email">Email: </label>
@@ -70,7 +70,7 @@ export default function Verify() {
           />
         </div>
         <div className="flex justify-center">
-          <SubmitButton buttonText="Verifikasi" />
+          <SubmitButton>Verifikasi</SubmitButton>
         </div>
       </form>
     </div>
