@@ -39,6 +39,7 @@ export default function Verify() {
       if (req.status === 200) router.push("/login");
     } catch (error) {
       console.log(error);
+      document.querySelector("#verifikasi").classList.add("hidden");
     }
   };
 

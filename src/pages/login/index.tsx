@@ -42,6 +42,7 @@ export default function Login() {
       if (req.status === 200) router.push("/");
     } catch (error) {
       console.log(error);
+      document.querySelector("#masuk").classList.add("hidden");
     }
   };
 

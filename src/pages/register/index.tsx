@@ -47,6 +47,7 @@ export default function Register() {
       if (req.status === 201) router.push("/verify");
     } catch (error) {
       console.log(error);
+      document.querySelector("#daftar").classList.add("hidden");
     }
   };
 
