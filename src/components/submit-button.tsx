@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 
 type props = {
@@ -9,11 +10,9 @@ type props = {
 export default function SubmitButton({ children, isError, isLoading }: props) {
   return (
     <button className="mt-4 flex rounded-lg bg-blue-400 p-[0.2rem_2rem] text-white shadow-lg hover:bg-blue-600 ">
-      {isLoading && (
+      {isLoading && !isError && (
         <svg
-          className={`-ml-1 mr-3 ${
-            isError && "hidden"
-          } h-5 w-5 animate-spin text-white`}
+          className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
