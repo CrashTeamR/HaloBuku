@@ -20,7 +20,7 @@ export default function Home({ data }: HomeProps) {
           <div className="mx-auto flex flex-col justify-center">
             <div className="my-10 w-full">
               <h1 className="my-4 text-center text-3xl font-bold text-blue-800 xl:text-left">
-                Buku Rilisan Terbaru
+                Buku Yang Tersedia
               </h1>
             </div>
             <div className="mx-auto flex w-full flex-wrap items-center justify-center gap-8 md:max-w-screen-lg xl:justify-start">

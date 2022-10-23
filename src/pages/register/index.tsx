@@ -3,6 +3,7 @@ import SubmitButton from "../../components/submit-button";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Register() {
   const router = useRouter();
@@ -59,7 +60,12 @@ export default function Register() {
       </Head>
 
       <section className="flex h-screen w-full items-center justify-center p-8">
-        <div className="flex flex-col gap-8 rounded-lg bg-white  p-[2rem_3rem] shadow-xl lg:w-[30%] xl:w-[28%] 2xl:w-[25%]">
+        <div className="relative flex flex-col gap-8 rounded-lg bg-white  p-[2rem_3rem] shadow-xl lg:w-[30%] xl:w-[28%] 2xl:w-[25%]">
+          <Link href="/">
+            <a className="absolute right-2 top-2 inline-block w-6 rounded-full text-center hover:bg-red-300">
+              X
+            </a>
+          </Link>
           <h1 className="text-center text-2xl font-semibold">Daftar</h1>
           <form className="max-w-sm space-y-5" onSubmit={onSubmitHandler}>
             <div className="flex flex-col gap-2">
