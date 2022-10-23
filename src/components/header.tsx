@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import LoginButton from "./login-button";
 import RegisterButton from "./register-button";
 import { useEffect, useState, useRef } from "react";
+import LogoutButton from "./logout-button";
 import HiddenMenu from "./hidden-menu";
 
 export const Header = () => {
@@ -90,13 +91,16 @@ export const Header = () => {
           />
         </form>
         {userToken ? (
-          <Link href={"/cart"}>
-            <Image
-              src={shoppingBag}
-              alt="Shopping Bag Icon"
-              className="cursor-pointer"
-            />
-          </Link>
+          <>
+            <Link href={"/cart"}>
+              <Image
+                src={shoppingBag}
+                alt="Shopping Bag Icon"
+                className="cursor-pointer"
+              />
+            </Link>
+            <LogoutButton className={"hidden md:block"} />
+          </>
         ) : (
           <div className="hidden space-x-3 md:block">
             <LoginButton />
