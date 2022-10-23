@@ -69,7 +69,7 @@ export const Header = () => {
           </a>
         </Link>
         <form
-          className="relative hidden w-3/6 translate-x-10 items-center   justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200 lg:flex"
+          className="relative hidden w-3/6 translate-x-10 items-center justify-between gap-2 rounded-lg bg-gray-100 py-2 px-5 outline outline-1 outline-blue-200 lg:flex"
           onSubmit={handleSubmit}
         >
           <label
@@ -91,13 +91,16 @@ export const Header = () => {
           />
         </form>
         {userToken ? (
-          <Link href={"/cart"}>
-            <Image
-              src={shoppingBag}
-              alt="Shopping Bag Icon"
-              className="cursor-pointer"
-            />
-          </Link>
+          <>
+            <Link href={"/cart"}>
+              <Image
+                src={shoppingBag}
+                alt="Shopping Bag Icon"
+                className="cursor-pointer"
+              />
+            </Link>
+            <LogoutButton className={"hidden md:block"} />
+          </>
         ) : (
           <div className="hidden space-x-3 md:block">
             <LoginButton />
