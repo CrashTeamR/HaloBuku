@@ -91,14 +91,13 @@ export const Header = () => {
           />
         </form>
         {userToken ? (
-          <div className="flex items-center space-x-5">
+          <Link href={"/cart"}>
             <Image
               src={shoppingBag}
               alt="Shopping Bag Icon"
-              className=" opacity-50"
+              className="cursor-pointer"
             />
-            <LogoutButton className="hidden md:block" />
-          </div>
+          </Link>
         ) : (
           <div className="hidden space-x-3 md:block">
             <LoginButton />

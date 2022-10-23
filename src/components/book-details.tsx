@@ -1,6 +1,7 @@
 import type { Book } from "../types";
 import Image from "next/image";
 import Head from "next/head";
+import AddCartButton from "./add-cart-button";
 
 interface BookDetailsProps {
   book: Book;
@@ -47,10 +48,11 @@ export const BookDetails = ({ book }: BookDetailsProps) => {
 
         <hr className="w-1/2 border-2 border-orange-600" />
 
-        <div>
+        <div className="mb-8">
           <h3 className="my-2 text-xl font-bold">Deskripsi</h3>
           <p>{book?.description}</p>
         </div>
+        <AddCartButton bookId={book._id} />
       </div>
     </section>
   );
